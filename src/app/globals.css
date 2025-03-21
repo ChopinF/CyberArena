@@ -24,3 +24,119 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.glitch {
+  animation: glitch 0.8s infinite alternate;
+}
+
+@keyframes glitch {
+  0% { text-shadow: -2px 2px 0px rgba(0, 255, 0, 0.7), 2px -2px 0px rgba(255, 0, 0, 0.7); }
+  100% { text-shadow: 2px -2px 0px rgba(0, 255, 0, 0.7), -2px 2px 0px rgba(255, 0, 0, 0.7); }
+}
+
+/* Text stil hacking */
+.hacker-text {
+  font-family: "Courier New", monospace;
+  color: #33ff33;
+  text-shadow: 0 0 5px #33ff33;
+}
+
+/* Scanline efect */
+.scanline {
+  background: repeating-linear-gradient(
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scan 0.5s linear infinite;
+}
+
+@keyframes scan {
+  from { transform: translateY(-2px); }
+  to { transform: translateY(2px); }
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  10% { opacity: 0.8; }
+  20% { opacity: 1; }
+  30% { opacity: 0.7; }
+  40% { opacity: 1; }
+  50% { opacity: 0.9; }
+  60% { opacity: 1; }
+  70% { opacity: 0.85; }
+  80% { opacity: 1; }
+  90% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+.flicker {
+  animation: flicker 2s infinite alternate;
+}
+
+.glitch {
+  animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* Glitch effect for the timer */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-5px, -5px);
+    opacity: 0.7;
+  }
+  40% {
+    transform: translate(5px, 5px);
+    opacity: 0.8;
+  }
+  60% {
+    transform: translate(-5px, -5px);
+    opacity: 0.7;
+  }
+  80% {
+    transform: translate(5px, 5px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+.glitch {
+  position: relative;
+  font-family: "Courier New", monospace;
+  color: #00ff00;
+  animation: glitch 1s infinite;
+}
+
+.glitch:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ff0033;
+  animation: glitch 1s infinite;
+  z-index: -1;
+}
+
+.glitch:hover {
+  color: #ff0033;
+}
+
+.glitch:before {
+  color: #00ff00;
+}
