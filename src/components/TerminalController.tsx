@@ -44,6 +44,7 @@ export default function TerminalController({ side, terminalLineData, action }: P
     if (terminalInput === "help") {
       setShowHelp(true);
     } else {
+      //TODO: aici trebuie dat : npm run build , si rezolvat eroarea de acolo
       action((prev: React.JSX.Element[]) => {
         const lastThreeCommands = prev.slice(-3);
         let typedText = "";
