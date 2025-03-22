@@ -1,3 +1,19 @@
+Sa adaug un hp bar / nuj daca ramane timp
+Deci vreau sa pot sa poata ataca un serviciu
+un brut pentru encriptare pe un fisier
+sa scaneze porturi
+
+Sa mai adaug un input in care baga flag, si vreau in componenta aia sa am: flagCaptured: boolean = false
+
+Problema 1:
+ala un defensiv sa activeze niste services, iar ala din offensive sa le incerce sa le dezactiveze
+
+Problema 2:
+mai multe fisiere ori encrypted ori hashed, pe care ala din defensiva le hashuieste cu un script pe care il facem noi
+
+Problema 3:
+scanare de porturi cu o varianta simplificata de nmap
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
