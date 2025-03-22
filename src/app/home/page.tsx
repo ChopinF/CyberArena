@@ -1,4 +1,3 @@
-
 "use client";
 
 // aici vreau landing page
@@ -26,10 +25,6 @@ export default function LandingPage() {
       setTimeout(() => router.push(`/battle/PORT_SCAN`), 1000);
   };
 
-  const handleClick = () => {
-    router.push("/battle");
-  };
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-green-400 font-mono">
       <h1 className="text-4xl font-bold glitch mb-6">Select Your Session</h1>
@@ -44,14 +39,6 @@ export default function LandingPage() {
             {session}
           </button>
         ))}
-
-        <button
-          onClick={handleClick}
-          key={"battle"}
-          className="px-6 py-3 text-xl font-bold border-2 border-green-500 rounded-lg transition-all duration-300 bg-green-500 text-black"
-        >
-          Go to Battle
-        </button>
       </div>
       {selectedSession && <p className="mt-4 text-yellow-400">Loading {selectedSession}...</p>}
     </div>

@@ -5,6 +5,8 @@ import TerminalController from "./TerminalController";
 
 //TODO: make the timer look nicer and make it stop when it reaches 0:00, 
 //make it stop and display a message something like it is done 
+
+//TODO: add session id, logic
 export default function BattleController() {
   const [lines, setLines] = useState<React.JSX.Element[]>([]);
   const [timeLeft, setTimeLeft] = useState(60); // 1-minute timer
