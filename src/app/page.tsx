@@ -12,23 +12,20 @@ export default function LandingPage() {
   const router = useRouter();
   const [selectedSession, setSelectedSession] = useState<string | null>(null);
 
-  const sessionIDs = ["SSH-EXPLOIT", "CRYPT0-CR4CK", "P0RT-SC4N"];
+  const sessionIDs = ["SSH_EXPLOIT", "CRYPT0_CR4CK", "P0RT_SC4N"];
 
   const handleSelect = (session: string) => {
     setSelectedSession(session);
     //setTimeout(() => router.push(`/battle?session=${session}`), 1000);
     setTimeout(() => router.push(`/battle/${session}`), 1000);
-    if (session === "SSH-EXPLOIT")
+    if (session === "SSH_EXPLOIT")
       setTimeout(() => router.push(`/battle/${session}`), 1000);
-    else if (session === "CRYPT0-CR4CK")
+    else if (session === "CRYPT0_CR4CK")
       setTimeout(() => router.push(`/battle/CRYPTO_CRACK`), 1000);
-    else if (session === "P0RT-SC4N")
+    else if (session === "P0RT_SC4N")
       setTimeout(() => router.push(`/battle/PORT_SCAN`), 1000);
   };
 
-  const handleClick = () => {
-    router.push("/battle");
-  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-green-400 font-mono">
@@ -45,13 +42,6 @@ export default function LandingPage() {
           </button>
         ))}
 
-        <button
-          onClick={handleClick}
-          key={"battle"}
-          className="px-6 py-3 text-xl font-bold border-2 border-green-500 rounded-lg transition-all duration-300 bg-green-500 text-black"
-        >
-          Go to Battle
-        </button>
       </div>
       {selectedSession && <p className="mt-4 text-yellow-400">Loading {selectedSession}...</p>}
     </div>

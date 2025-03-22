@@ -11,17 +11,17 @@ export default function LandingPage() {
   const router = useRouter();
   const [selectedSession, setSelectedSession] = useState<string | null>(null);
 
-  const sessionIDs = ["SSH-EXPLOIT", "CRYPT0-CR4CK", "P0RT-SC4N"];
+  const sessionIDs = ["SSH_EXPLOIT", "CRYPT0_CR4CK", "P0RT_SC4N"];
 
   const handleSelect = (session: string) => {
     setSelectedSession(session);
     //setTimeout(() => router.push(`/battle?session=${session}`), 1000);
     setTimeout(() => router.push(`/battle/${session}`), 1000);
-    if (session === "SSH-EXPLOIT")
+    if (session === "SSH_EXPLOIT")
       setTimeout(() => router.push(`/battle/${session}`), 1000);
-    else if (session === "CRYPT0-CR4CK")
+    else if (session === "CRYPT0_CR4CK")
       setTimeout(() => router.push(`/battle/CRYPTO_CRACK`), 1000);
-    else if (session === "P0RT-SC4N")
+    else if (session === "P0RT_SC4N")
       setTimeout(() => router.push(`/battle/PORT_SCAN`), 1000);
   };
 
