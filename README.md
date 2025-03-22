@@ -7,12 +7,42 @@ Sa mai adaug un input in care baga flag, si vreau in componenta aia sa am: flagC
 
 Problema 1:
 ala un defensiv sa activeze niste services, iar ala din offensive sa le incerce sa le dezactiveze
+de exemplu pentru ssh, sa incerce sa ghiceasca parola
+sau sa fie folosit 🔹 3. Exploatarea unei Vulnerabilități (ex. CVE-2022-47966)
+🔹 4. Apărarea (Patch sau Fail2Ban)
+
+si pur si simplu fac switch in controller, adica :
+
+const onEnter = (terminalInput: string) => {
+  if (terminalInput === "bruteforce ssh") bruteForceSSH();
+  else if (terminalInput === "exploit ssh") exploitSSH();
+  else if (terminalInput === "patch ssh") patchSSH();
+  else console.log("[System] Command not found.");
+};
+
+si pot complica asta
 
 Problema 2:
 mai multe fisiere ori encrypted ori hashed, pe care ala din defensiva le hashuieste cu un script pe care il facem noi
 
+ala in defensiva sa foloseasca orice algo de hashing/enc,
+iar ala din ofensiva sa incerce sa sparga, ori cu ceva tool online  
+ceva cu parole , ca sa fie mai practic, sa gasesc un exemplu practic
+
+sau alternativa:
+      sa poata ala in defensiva sa aiba un minut in plus, si sa isi scrie sa modifice un script de bash de ceva encrypted
+      si de exemplu ala sa modifice niste numere din cheie, iar ala din offensive sa faca un brute
+
 Problema 3:
 scanare de porturi cu o varianta simplificata de nmap
+sa bage ceva gen : nmap [IP]
+si dupa sa poata baga exploit discovery, si sa existe porturi false/true si sa incerce pur si simplu sa vada daca duce undeva
+
+alternativ:
+efectiv sa fie ceva: scan 192.168.1.1
+sa zicem : [Offensive] Open ports: 22, 80, 443
+deffender : [Defensive] Alert! Possible scan from 192.168.1.1
+si ala sa tot incerce sa inchida sa deschida idk
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
